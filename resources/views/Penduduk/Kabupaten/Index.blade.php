@@ -5,7 +5,7 @@
     <!-- FORM PENCARIAN -->
     <h1>Daftar Kabupaten</h1>
 
-    <a href='{{ url('penduduk-tambah') }}' class="btn btn-secondary">kembali</a>
+    <a href='{{ url('penduduk/create') }}' class="btn btn-secondary">kembali</a>
     <a href='{{ url('kabupaten/create') }}' class="btn btn-primary">+ Tambah Data</a>
     <!-- TOMBOL TAMBAH DATA -->
     <div class="row pb-3">
