@@ -21,7 +21,6 @@ class PendudukController extends Controller
         $provinsi = Provinsi::orderBy('nama_provinsi', 'asc')->get();
         $kabupaten = Kabupaten::orderBy('nama_kabupaten', 'asc')->get();
         return view('Penduduk.Index', compact('dataPenduduk', 'provinsi', 'kabupaten'));
-        // return view('Penduduk.Edit', compact('dataPenduduk', 'provinsi', 'kabupaten'));
     }
 
     /**
@@ -62,6 +61,8 @@ class PendudukController extends Controller
         ], [
             'nama.required' => 'Nama Wajib diisi',
             'nik.required' => 'NIK Wajib diisi',
+            'nik.unique' => 'NIK sudah terdaftar',
+            'nik.max' => 'NIK maksimal 18 karakter',
             'alamat.required' => 'Alamat Wajib diisi',
             'provinsi_id.required' => 'Provinsi Wajib diisi',
             'kabupaten_id.required' => 'Kabupaten Wajib diisi',
@@ -128,6 +129,7 @@ class PendudukController extends Controller
         ], [
             'nama.required' => 'Nama Wajib diisi',
             'nik.required' => 'NIK Wajib diisi',
+            'nik.max' => 'NIK maksimal 18 karakter',
             'alamat.required' => 'Alamat Wajib diisi',
             'provinsi_id.required' => 'Provinsi Wajib diisi',
             'kabupaten_id.required' => 'Kabupaten Wajib diisi',
